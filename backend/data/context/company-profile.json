@@ -1,0 +1,10 @@
+{
+  "name": "Meridian Capital Partners",
+  "type": "Mid-size financial services firm",
+  "services": ["Wealth management", "Investment advisory", "Institutional trading"],
+  "size": "~200 employees",
+  "regulatory_environment": ["SEC", "FINRA", "OFAC"],
+  "headquarters": "New York, NY",
+  "founded": 2008,
+  "description": "Meridian Capital Partners is a mid-size financial services firm providing wealth management, investment advisory, and institutional trading services. The firm manages approximately $4.2 billion in assets under management across individual, institutional, and trust clients. Meridian operates under SEC, FINRA, and OFAC regulatory oversight."
+}

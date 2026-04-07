@@ -1,0 +1,76 @@
+{
+  "crm": {
+    "name": "Salesforce",
+    "n8n_node": "n8n-nodes-base.salesforce",
+    "details": "Pipeline tracking, client records, opportunity management, relationship manager assignments",
+    "instance_url": "https://meridian.salesforce.com"
+  },
+  "communications": {
+    "name": "Slack",
+    "n8n_node": "n8n-nodes-base.slack",
+    "details": "Team messaging, automated alerts, cross-team notifications",
+    "channels": [
+      {
+        "name": "#compliance-alerts",
+        "purpose": "KYC/AML alerts, sanctions screening results, SAR notifications, regulatory updates"
+      },
+      {
+        "name": "#deal-team",
+        "purpose": "Deal pipeline updates, opportunity tracking, client advisory coordination"
+      },
+      {
+        "name": "#operations",
+        "purpose": "Trade settlement, reconciliation, client onboarding status, operational issues"
+      },
+      {
+        "name": "#risk-team",
+        "purpose": "Market risk alerts, credit risk monitoring, operational risk incidents"
+      },
+      {
+        "name": "#management",
+        "purpose": "Executive updates, cross-team coordination, strategic decisions"
+      }
+    ]
+  },
+  "database": {
+    "name": "PostgreSQL",
+    "n8n_node": "n8n-nodes-base.postgres",
+    "details": "Primary database for client records, transactions, KYC documents, and sanctions screening",
+    "host": "postgres",
+    "port": 5432,
+    "database": "meridian_clients",
+    "credential_name": "Meridian Postgres",
+    "tables": {
+      "clients": {
+        "description": "Master client records",
+        "columns": "id, name, entity_type (individual/corporation/trust/partnership), jurisdiction, risk_rating (low/medium/high), onboarding_date, kyc_last_reviewed, pep_status (boolean), relationship_manager"
+      },
+      "transactions": {
+        "description": "All client transactions",
+        "columns": "id, client_id, amount, currency, direction (inbound/outbound), counterparty, transaction_date, flagged (boolean), flag_reason"
+      },
+      "kyc_records": {
+        "description": "KYC document records",
+        "columns": "id, client_id, document_type (passport/utility_bill/corporate_registration/financial_statement/trust_deed/source_of_wealth/pep_declaration), document_url, uploaded_date, expiry_date, status (valid/expired/pending_review/rejected), reviewer"
+      },
+      "sanctions_checks": {
+        "description": "Sanctions screening results",
+        "columns": "id, client_id, check_date, result (clear/hit/pending), matched_list, details"
+      }
+    }
+  },
+  "documents": {
+    "name": "SharePoint",
+    "n8n_node": "n8n-nodes-base.httpRequest",
+    "n8n_node_note": "No native SharePoint node in n8n — access via HTTP Request node using Microsoft Graph API (https://graph.microsoft.com/v1.0/sites/...)",
+    "details": "Internal document storage for KYC documents, compliance manuals, client files. Accessed via Microsoft Graph REST API.",
+    "base_url": "https://meridian.sharepoint.com",
+    "api_base": "https://graph.microsoft.com/v1.0/sites/{site-id}"
+  },
+  "email": {
+    "name": "SendGrid",
+    "n8n_node": "n8n-nodes-base.sendGrid",
+    "details": "Client communications, automated notifications, report distribution",
+    "from_address": "notifications@meridiancp.com"
+  }
+}

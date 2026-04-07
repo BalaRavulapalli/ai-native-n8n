@@ -1,0 +1,75 @@
+{
+  "teams": {
+    "compliance": {
+      "head": "Sarah Chen",
+      "title": "Chief Compliance Officer",
+      "channel": "#compliance-alerts",
+      "size": 8,
+      "responsibilities": [
+        "KYC/AML program management",
+        "Sanctions screening and escalation",
+        "Regulatory reporting (SAR, CTR)",
+        "Employee trading oversight",
+        "Regulatory exam preparation",
+        "Policy development and enforcement"
+      ]
+    },
+    "deal_team": {
+      "head": "Michael Torres",
+      "title": "Managing Director, Client Advisory",
+      "channel": "#deal-team",
+      "size": 25,
+      "responsibilities": [
+        "Client relationship management",
+        "Pipeline management and deal execution",
+        "Investment advisory",
+        "Pitch preparation and client presentations",
+        "New client acquisition"
+      ]
+    },
+    "operations": {
+      "head": "Lisa Park",
+      "title": "Head of Operations",
+      "channel": "#operations",
+      "size": 30,
+      "responsibilities": [
+        "Trade settlement and confirmation",
+        "Daily reconciliation",
+        "Client onboarding processing",
+        "Wire transfer execution",
+        "Account maintenance"
+      ]
+    },
+    "risk": {
+      "head": "David Kim",
+      "title": "Chief Risk Officer",
+      "channel": "#risk-team",
+      "size": 10,
+      "responsibilities": [
+        "Market risk monitoring",
+        "Credit risk assessment",
+        "Operational risk management",
+        "Portfolio concentration limits",
+        "Stress testing"
+      ]
+    },
+    "management": {
+      "head": "Robert Hayward",
+      "title": "CEO",
+      "channel": "#management",
+      "size": 5,
+      "responsibilities": [
+        "Strategic direction",
+        "Cross-team coordination",
+        "Client escalations",
+        "Board reporting"
+      ]
+    }
+  },
+  "approval_chains": {
+    "new_client_onboarding": ["Relationship Manager", "Compliance Officer", "Operations"],
+    "high_risk_transaction": ["Compliance Officer", "Chief Risk Officer"],
+    "sar_filing": ["Compliance Analyst", "Compliance Officer", "BSA Officer"],
+    "policy_exception": ["Department Head", "Compliance Officer", "CEO"]
+  }
+}

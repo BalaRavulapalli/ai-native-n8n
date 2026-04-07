@@ -1,0 +1,35 @@
+# Environment & secrets
+.env
+
+# Claude Code internals
+CLAUDE.md
+.claude/
+
+# Development plan
+docs/DEVELOPMENT_PLAN.md
+
+# Backup files
+_backup_pre_rag_refactor/
+
+# macOS
+.DS_Store
+
+# Node / Next.js
+node_modules/
+.next/
+frontend/node_modules/
+frontend/.next/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# n8n local data
+n8n/data/
+
+# IDE
+.vscode/
+.idea/

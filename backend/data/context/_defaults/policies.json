@@ -1,0 +1,49 @@
+{
+  "kyc": {
+    "refresh_interval_months": 12,
+    "enhanced_due_diligence_triggers": [
+      "high-risk jurisdiction",
+      "PEP status",
+      "adverse media hit",
+      "complex ownership structure",
+      "high transaction volume inconsistent with profile"
+    ],
+    "high_risk_jurisdictions": ["Iran", "North Korea", "Syria", "Myanmar", "Russia", "Cayman Islands", "Panama", "BVI"],
+    "approval_required_from": "Compliance Officer (Sarah Chen)",
+    "escalation_channel": "#compliance-alerts",
+    "document_requirements": {
+      "individual": ["passport", "proof_of_address", "source_of_wealth"],
+      "corporation": ["corporate_registration", "financial_statement", "beneficial_ownership"],
+      "trust": ["trust_deed", "financial_statement", "trustee_identification"]
+    }
+  },
+  "aml": {
+    "sar_filing_threshold_usd": 10000,
+    "ctr_threshold_usd": 10000,
+    "structuring_detection_window_days": 30,
+    "structuring_pattern": "3 or more transactions just below threshold within detection window",
+    "escalation_channel": "#compliance-alerts",
+    "review_team": "Compliance Team"
+  },
+  "sanctions": {
+    "screening_required": "all new clients and counterparties at onboarding",
+    "lists": ["OFAC SDN", "UN Consolidated", "EU Sanctions", "UK Sanctions"],
+    "rescreening_frequency": {
+      "high_risk": "daily",
+      "standard": "monthly"
+    },
+    "hit_escalation": "Immediate notification to #compliance-alerts and Compliance Officer",
+    "false_positive_review": "Compliance team reviews within 24 hours"
+  },
+  "trading": {
+    "pre_clearance_required": true,
+    "blackout_period_days": 14,
+    "personal_trading_approval_channel": "#compliance-alerts",
+    "restricted_list_check": "Required before any employee trade"
+  },
+  "data_retention": {
+    "transaction_records_years": 7,
+    "kyc_documents_years": 5,
+    "communications_years": 3
+  }
+}
